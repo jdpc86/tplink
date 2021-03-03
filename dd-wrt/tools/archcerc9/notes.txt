@@ -1,0 +1,25 @@
+it seems that mktplinkfw3.c is able to build a ddwrt that can work with Archer C8 v3 firmware...
+
+steps attempted:
+
+1: extract os-image based on image offset(+0x1814) and size in image partition table:
+
+vendor block: 6164 (0x1814)
+os-image: 230120, 1679360  --> starting: 236284
+file-system: 1909480 11626486 -->starting: 1915644
+11696052 (latest build)
+11626486-105=11626381 (minus soft version and product version)
+
+dd if=factory-to-ddwrt.bin skip=236284 count=1679360 bs=1 of=os-images.bin 
+
+2: extract file-system, had to re-adjust the size as the size in factory bin appears to be larger than the rest of the file:
+
+dd if=factory-to-ddwrt.bin skip=1915644 count=11626486 bs=1 of=file-system.bin --> actual count used: count=11694004
+
+3: compiled *.c files in this folder using gcc *.c that generated a.out file
+
+4: ran below to generate ddwrt_jd.bin:
+
+./a.out -B ARCHERC8 -k os-images.bin -r file-system.bin -o ddwrt_jd.bin
+
+5: update via web UI or tftp way did not pass the validation step it appears...

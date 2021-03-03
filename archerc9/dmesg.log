@@ -1,0 +1,362 @@
+pci 0000:00:06.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:07.0: reg 10: [mem 0x18012000-0x18012fff]
+pci 0000:00:07.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:08.0: reg 10: [mem 0x18013000-0x18013fff]
+pci 0000:00:08.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:09.0: reg 10: [mem 0x18014000-0x18014fff]
+pci 0000:00:09.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0a.0: reg 10: [mem 0x1800b000-0x1800bfff]
+pci 0000:00:0a.0: reg 14: [mem 0x1800c000-0x1800cfff]
+pci 0000:00:0a.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0b.0: reg 10: [mem 0x18022000-0x18022fff]
+pci 0000:00:0b.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0b.1: reg 10: [mem 0x18021000-0x18021fff]
+pci 0000:00:0b.1: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0c.0: reg 10: [mem 0x18023000-0x18023fff]
+pci 0000:00:0c.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0d.0: reg 10: [mem 0x18020000-0x18020fff]
+pci 0000:00:0d.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0e.0: reg 10: [mem 0x1802a000-0x1802afff]
+pci 0000:00:0e.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0f.0: reg 10: [mem 0x18210000-0x1821ffff]
+pci 0000:00:0f.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:10.0: reg 10: [mem 0x18010000-0x18010fff]
+pci 0000:00:10.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:11.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:12.0: reg 10: [mem 0x18028000-0x18028fff]
+pci 0000:00:12.0: reg 30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:13.0: reg 10: [mem 0x18029000-0x18029fff]
+pci 0000:00:13.0: reg 30: [mem 0x00000000-0x000007ff pref]
+PCI: Fixing up bus 0
+PCIE1 link=1
+PCIE1 switching to GEN2
+PCIE1 link=1
+pci 0001:00:00.0: PME# supported from D0 D3hot D3cold
+pci 0001:00:00.0: PME# disabled
+PCI: Fixing up bus 0
+PCI: bus0: Fast back to back transfers disabled
+pci 0001:01:00.0: reg 10: [mem 0x08000000-0x08007fff 64bit]
+pci 0001:01:00.0: supports D1 D2
+PCI: Fixing up bus 1
+PCI: bus1: Fast back to back transfers disabled
+pci 0001:00:00.0: BAR 8: assigned [mem 0x08000000-0x080fffff]
+pci 0001:01:00.0: BAR 0: assigned [mem 0x08000000-0x08007fff 64bit]
+pci 0001:01:00.0: BAR 0: set to [mem 0x08000000-0x08007fff 64bit] (PCI address [0x8000000-0x8007fff]
+pci 0001:00:00.0: PCI bridge to [bus 01-01]
+pci 0001:00:00.0:   bridge window [io  disabled]
+pci 0001:00:00.0:   bridge window [mem 0x08000000-0x080fffff]
+pci 0001:00:00.0:   bridge window [mem pref disabled]
+PCIE2 link=1
+PCIE2 switching to GEN2
+PCIE2 link=1
+pci 0002:00:00.0: PME# supported from D0 D3hot D3cold
+pci 0002:00:00.0: PME# disabled
+PCI: Fixing up bus 0
+PCI: bus0: Fast back to back transfers disabled
+pci 0002:02:00.0: reg 10: [mem 0x40000000-0x40007fff 64bit]
+pci 0002:02:00.0: supports D1 D2
+PCI: Fixing up bus 2
+PCI: bus2: Fast back to back transfers disabled
+pci 0002:00:00.0: BAR 8: assigned [mem 0x40000000-0x400fffff]
+pci 0002:02:00.0: BAR 0: assigned [mem 0x40000000-0x40007fff 64bit]
+pci 0002:02:00.0: BAR 0: set to [mem 0x40000000-0x40007fff 64bit] (PCI address [0x40000000-0x40007fff]
+pci 0002:00:00.0: PCI bridge to [bus 02-02]
+pci 0002:00:00.0:   bridge window [io  disabled]
+pci 0002:00:00.0:   bridge window [mem 0x40000000-0x400fffff]
+pci 0002:00:00.0:   bridge window [mem pref disabled]
+PCIE3 link=0
+VFS: Disk quotas dquot_6.5.2
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+JFFS2 version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+msgmni has been set to 498
+io scheduler noop registered (default)
+io scheduler deadline registered
+io scheduler cfq registered
+Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+serial8250.0: ttyS0 at MMIO 0x18000300 (irq = 117) is a 16550
+console [ttyS0] enabled, bootconsole disabled
+serial8250.0: ttyS1 at MMIO 0x18000400 (irq = 117) is a 16550
+brd: module loaded
+loop: module loaded
+pflash: found no supported devices
+bcmsflash: found no supported devices
+Boot partition size = 1048576(0x100000)
+Creating 3 MTD partitions on "nflash":
+0x000000000000-0x000000100000 : "boot"
+0x000000100000-0x000000200000 : "nvram"
+0x000002200000-0x000004200000 : "backup"
+usbmon: debugfs is not available
+Initializing USB Mass Storage driver...
+usbcore: registered new interface driver usb-storage
+USB Mass Storage support registered.
+Registered led device: blue:lan
+Registered led device: blue:usb_1
+Registered led device: blue:usb_3
+Registered led device: blue:wps
+Registered led device: blue:wan
+Registered led device: orange:wan
+Registered led device: blue:status
+Registered led device: blue:wlan_2g
+Registered led device: blue:wlan_5g
+u32 classifier
+    Actions configured
+Netfilter messages via NETLINK v0.30.
+nf_conntrack version 0.5.0 (3984 buckets, 15936 max)
+ctnetlink v0.93: registering with nfnetlink.
+xt_time: kernel timezone is -0000
+ip_tables: (C) 2000-2006 Netfilter Core Team
+TCP cubic registered
+NET: Registered protocol family 10
+lo: Disabled Privacy Extensions
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+IPv6 over IPv4 tunneling driver
+sit0: Disabled Privacy Extensions
+NET: Registered protocol family 17
+Bridge firewalling registered
+802.1Q VLAN Support v1.8 Ben Greear <greearb@candelatech.com>
+All bugs added by David S. Miller <davem@redhat.com>
+Northstar brcmnand NAND Flash Controller driver, Version 0.1 (c) Broadcom Inc. 2012
+NAND device: Manufacturer ID: 0xc8, Chip ID: 0xd1 (Unknown NAND 128MiB 3,3V 8-bit)
+Spare area=64 eccbytes 28, ecc bytes located at:
+ 9 10 11 12 13 14 15 25 26 27 28 29 30 31 41 42 43 44 45 46 47 57 58 59 60 61 62 63
+Available 35 bytes at (off,len):
+(1,8) (16,9) (32,9) (48,9) (0,0) (0,0) (0,0) (0,0) 
+Scanning device for bad blocks
+Options: NO_AUTOINCR,NO_READRDY,
+Creating 3 MTD partitions on "brcmnand":
+0x000000200000-0x000002200000 : "rootfs"
+0x000004200000-0x000007c00000 : "storage"
+0x000007c00000-0x000008000000 : "data"
+VFS: Mounted root (jffs2 filesystem) readonly on device 31:3.
+devtmpfs: mounted
+Freeing init memory: 224K
+PPP generic driver version 2.4.2
+ctf: module license 'Proprietary' taints kernel.
+Disabling lock debugging due to kernel taint
+et_module_init: passivemode set to 0x0
+et_module_init: txworkq set to 0x0
+et_module_init: et_txq_thresh set to 0x400
+si_doattach: incoming bus is PCI but it's a lie, switching to SI devid:0x4715
+Found chip type NAI (0x3f00cf12)
+Chipc: rev 42, caps 0x48000a, chipst 0x0 pmurev 0, pmucaps 0x0
+eth0: Broadcom BCM47XX 10/100/1000 Mbps Ethernet Controller 6.37.14.93 (r469350)
+xhci_hcd 0000:00:0c.0: xHCI Host Controller
+xhci_hcd 0000:00:0c.0: new USB bus registered, assigned bus number 1
+xhci_hcd 0000:00:0c.0: irq 112, io mem 0x18023000
+xhci_hcd 0000:00:0c.0: Failed to enable MSI-X
+xhci_hcd 0000:00:0c.0: failed to allocate MSI entry
+usb usb1: No SuperSpeed endpoint companion for config 1  interface 0 altsetting 0 ep 129: using minimum values
+xHCI xhci_add_endpoint called for root hub
+xHCI xhci_check_bandwidth called for root hub
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci_hcd 0000:00:0b.1: EHCI Host Controller
+ehci_hcd 0000:00:0b.1: new USB bus registered, assigned bus number 2
+ehci_hcd 0000:00:0b.1: irq 111, io mem 0x18021000
+ehci_hcd 0000:00:0b.1: USB 0.0 started, EHCI 1.00
+hub 2-0:1.0: USB hub found
+hub 2-0:1.0: 2 ports detected
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+ohci_hcd 0000:00:0b.0: OHCI Host Controller
+ohci_hcd 0000:00:0b.0: new USB bus registered, assigned bus number 3
+ohci_hcd 0000:00:0b.0: irq 111, io mem 0x18022000
+hub 3-0:1.0: USB hub found
+hub 3-0:1.0: 2 ports detected
+NTFS driver 2.1.29 [Flags: R/O MODULE].
+fuse init (API version 7.15)
+Tuxera FAT 12/16/32 driver version 3014.9.10 [Flags: R/W MODULE].
+Tuxera exFAT driver version 3014.9.10 [Flags: R/W MODULE].
+Tuxera NTFS driver 3015.1.29 [Flags: R/W MODULE].
+Tuxera HFS+ driver 3014.7.28
+tun: Universal TUN/TAP device driver, 1.6
+tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+usb cycle succeed
+PPP MPPE Compression module registered
+ip6tnl0: Disabled Privacy Extensions
+L2TP core driver, V2.0
+L2TP netlink interface
+gre: GRE over IPv4 demultiplexor driver
+GRE over IPv4 tunneling driver
+bonding: Ethernet Channel Bonding Driver: v3.7.0 (June 2, 2010)
+bonding: Warning: either miimon or arp_interval and arp_ip_target module parameters must be specified, otherwise bonding will not detect link failures! see bonding.txt for details.
+NET: Registered protocol family 24
+PPPoL2TP kernel driver, V2.0
+PPTP driver version 0.8.3
+nf_conntrack_rtsp v0.7 loading
+nf_nat_rtsp v0.7 loading
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+device eth0 entered promiscuous mode
+device eth0.1 entered promiscuous mode
+br-lan: port 1(eth0.1) entering learning state
+br-lan: port 1(eth0.1) entering learning state
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+WAN(eth0.4094) carrier off!
+ADDRCONF(NETDEV_CHANGE): eth0.1: link becomes ready
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+br-lan: port 1(eth0.1) entering forwarding state
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+Lan Domain: tplinklogin.net
+Lan Domain: www.tplinklogin.net
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+kcg 333 :GPL NetUSB up!
+kc   90 : run_telnetDBGDServer start 
+
+gro enabled with interval 2
+kc  227 : init_DebugD end
+INFO17E0: NetUSB 1.02.65.5, 00020624 : Apr 22 2015 15:23:07
+INFO17E2: 7437: Archer C9 v5 :Archer C9 v5 
+INFO17E3:  AUTH ISOC
+INFO17E4:  filterAudio
+usbcore: registered new interface driver KC NetUSB General Driver
+INFO16D4:  infomap bf4a4e48 
+INFO0145:  init proc : PAGE_SIZE 4096
+INFO16D7:  sleep to wait br-lan to wake up
+INFO15A7: tcpConnector() started... : br-lan 
+
+gro enabled with interval 2
+
+gro enabled with interval 2
+INFO155A: Bind to br-lan
+eth0.4094: no IPv6 routers present
+br-lan: no IPv6 routers present
+
+gro enabled with interval 2
+eth0: no IPv6 routers present
+
+gro enabled with interval 2
+Erase at 0x01ec0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01ea0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01e80000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01e60000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01e40000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01e20000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01e00000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01de0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01dc0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01da0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01d80000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01d60000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01d40000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01d20000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01d00000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01ce0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01cc0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01ca0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01c80000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01c60000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01c40000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01c20000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01c00000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01be0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01bc0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01ba0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01b80000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01b60000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01b40000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01b20000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01fe0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01fc0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01fa0000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01f80000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01f60000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01f40000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01f20000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01f00000 failed immediately: -EROFS. Is the sector locked?
+Erase at 0x01ee0000 failed immediately: -EROFS. Is the sector locked?
+button cycle succeed
+wl_module_init: msglevel set to 0x0
+wl_module_init: msglevel2 set to 0x0
+wl_module_init: phymsglevel set to 0x1
+wl_module_init: passivemode set to 0x0
+wl_module_init: txworkq set to 0x0
+Found chip type AI (0x15134360)
+Chipc: rev 43, caps 0x58680001, chipst 0x249 pmurev 17, pmucaps 0x10a22b11
+ipxotp_read_region: h/w region not programmed
+Neither SPROM nor OTP has valid image
+srom rev:0
+ChangeVCO => vco:960, xtalF:40, frac: 98, ndivMode: 3, ndivint: 24
+Data written into the PLL_CNTRL_ADDR2: 00000c31
+Data written into the PLL_CNTRL_ADDR3 (Fractional): 0000100e
+Changing rsrc 6 res_updn_timer to 0x100001
+JJI315: BCM4360 alp enter
+Changing max_res_mask to 0x1ff
+eth1: Broadcom BCM4360 802.11 Wireless Controller 6.37.14.93 (r469350 WLTEST) (Compiled in . at 11:37:34 on Mar 16 2018)
+Found chip type AI (0x15134360)
+Chipc: rev 43, caps 0x58680001, chipst 0x24d pmurev 17, pmucaps 0x10a22b11
+srom rev:0
+Overriding boardvendor: 0x14e4 instead of 0x14e4
+ChangeVCO => vco:960, xtalF:40, frac: 98, ndivMode: 3, ndivint: 24
+Data written into the PLL_CNTRL_ADDR2: 00000c31
+Data written into the PLL_CNTRL_ADDR3 (Fractional): 0000100e
+Changing rsrc 6 res_updn_timer to 0x100001
+JJI315: BCM4360 alp enter
+Changing max_res_mask to 0x1ff
+eth2: Broadcom BCM4360 802.11 Wireless Controller 6.37.14.93 (r469350 WLTEST) (Compiled in . at 11:37:34 on Mar 16 2018)
+usb 2-1: new high-speed USB device number 2 using ehci_hcd
+scsi0 : usb-storage 2-1:1.0
+scsi 0:0:0:0: Direct-Access     Generic  Flash Disk       8.07 PQ: 0 ANSI: 2
+sd 0:0:0:0: [sda] 258496 512-byte logical blocks: (132 MB/126 MiB)
+sd 0:0:0:0: [sda] Write Protect is off
+sd 0:0:0:0: [sda] Mode Sense: 03 00 00 00
+sd 0:0:0:0: [sda] Assuming drive cache: write through
+sd 0:0:0:0: [sda] Assuming drive cache: write through
+ sda: sda1
+sd 0:0:0:0: [sda] Assuming drive cache: write through
+sd 0:0:0:0: [sda] Attached SCSI removable disk
+
+gro enabled with interval 2
+tntfs info (device sda1, pid 2494): ntfs_fill_super(): fail_safe is enabled
+
+tfat: fail_safe is enabled
+tfat: cluster_heap_lbo 0x44000
+tfat: 11 blkbits for normal inodes
+tfat: fat start lbo 0x1000
+tfat: 11 blkbits for main FAT16 inode
+tfat info: FAT16 volume version 0.0.
+
+gro enabled with interval 2

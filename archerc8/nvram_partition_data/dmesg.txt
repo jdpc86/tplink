@@ -1,0 +1,334 @@
+32 tx_in_transit 2 tid 0 rem_window 32
+start_seq 0xe91 max_seq 0xe92 tx_exp_seq 0xe91 bar_ackpending_seq 0xe90
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x10 bmccmd 7 framecnt 0x400 
+AQM agg params 0xfff maxlen hi/lo 0x8 0xf01a minlen 0x1b4 adjlen 0x8
+AQM agg results 0x8001 len hi/lo: 0x0 0x133 BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 32 tx_in_transit 2 tid 0 rem_window 32
+start_seq 0xe96 max_seq 0xe96 tx_exp_seq 0xe95 bar_ackpending_seq 0xe95
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x12 bmccmd 1 framecnt 0xd2 
+AQM agg params 0xfc0 maxlen hi/lo 0x0 0xffff minlen 0x0 adjlen 0x8
+AQM agg results 0x2001 len hi/lo: 0x0 0x53a BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 32 tx_in_transit 3 tid 0 rem_window 32
+start_seq 0x829 max_seq 0x82b tx_exp_seq 0x829 bar_ackpending_seq 0x7ec
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x2 bmccmd 1 framecnt 0xeb 
+AQM agg params 0xfc0 maxlen hi/lo 0x0 0xffff minlen 0x0 adjlen 0x8
+AQM agg results 0x2001 len hi/lo: 0x0 0x51d BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 64 tx_in_transit 2 tid 0 rem_window 64
+start_seq 0x326 max_seq 0x327 tx_exp_seq 0x328 bar_ackpending_seq 0x2e4
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x12 bmccmd 1 framecnt 0x3d 
+AQM agg params 0xfc0 maxlen hi/lo 0x0 0xffff minlen 0x0 adjlen 0x8
+AQM agg results 0x2001 len hi/lo: 0x0 0x53a BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 64 tx_in_transit 2 tid 0 rem_window 64
+start_seq 0xef8 max_seq 0xef9 tx_exp_seq 0xefa bar_ackpending_seq 0x909
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x12 bmccmd 7 framecnt 0x400 
+AQM agg params 0xfc0 maxlen hi/lo 0x0 0xffff minlen 0x0 adjlen 0x8
+AQM agg results 0x2001 len hi/lo: 0x0 0x53a BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 32 tx_in_transit 1 tid 0 rem_window 32
+start_seq 0x830 max_seq 0x830 tx_exp_seq 0x831 bar_ackpending_seq 0x82f
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x10 bmccmd 1 framecnt 0x400 
+AQM agg params 0xfdf maxlen hi/lo 0x2 0x69e8 minlen 0x78 adjlen 0x8
+AQM agg results 0x8001 len hi/lo: 0x0 0xe4 BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 64 tx_in_transit 2 tid 0 rem_window 64
+start_seq 0x92a max_seq 0x92b tx_exp_seq 0x92a bar_ackpending_seq 0x32a
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x10 bmccmd 7 framecnt 0x400 
+AQM agg params 0xfdf maxlen hi/lo 0x2 0x69e8 minlen 0x78 adjlen 0x8
+AQM agg results 0x8001 len hi/lo: 0x0 0x90 BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 64 tx_in_transit 1 tid 0 rem_window 64
+start_seq 0x93b max_seq 0x93b tx_exp_seq 0x93b bar_ackpending_seq 0x92e
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x0 bmccmd 1 framecnt 0x400 
+AQM agg params 0xfff maxlen hi/lo 0x7 0x3db8 minlen 0x160 adjlen 0x8
+AQM agg results 0x8001 len hi/lo: 0x0 0x6e BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 32 tx_in_transit 1 tid 0 rem_window 32
+start_seq 0x39c max_seq 0x39d tx_exp_seq 0x39d bar_ackpending_seq 0x39d
+bar_ackpending 1 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x0 bmccmd 7 framecnt 0x400 
+AQM agg params 0xfdf maxlen hi/lo 0x2 0x69e8 minlen 0x78 adjlen 0x8
+AQM agg results 0x8001 len hi/lo: 0x0 0x616 BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 32 tx_in_transit 2 tid 0 rem_window 32
+start_seq 0x3a9 max_seq 0x3aa tx_exp_seq 0x3a9 bar_ackpending_seq 0x39f
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x0 bmccmd 7 framecnt 0x400 
+AQM agg params 0xfef maxlen hi/lo 0x5 0x6e4a minlen 0x108 adjlen 0x8
+AQM agg results 0x8001 len hi/lo: 0x0 0x616 BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 32 tx_in_transit 3 tid 0 rem_window 32
+start_seq 0x8bc max_seq 0x8be tx_exp_seq 0x8bc bar_ackpending_seq 0x833
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x10 bmccmd 7 framecnt 0x400 
+AQM agg params 0xfdf maxlen hi/lo 0x2 0x69e8 minlen 0x78 adjlen 0x8
+AQM agg results 0x8001 len hi/lo: 0x0 0x81 BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 32 tx_in_transit 2 tid 0 rem_window 32
+start_seq 0x1 max_seq 0x8d0 tx_exp_seq 0x8cf bar_ackpending_seq 0x0
+bar_ackpending 0 free_me 0 alive 1 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+wlc_dump_aggfifo:
+framerdy 0x10 bmccmd 7 framecnt 0x400 
+AQM agg params 0xfdf maxlen hi/lo 0x2 0xb67c minlen 0x84 adjlen 0x8
+AQM agg results 0x8001 len hi/lo: 0x0 0x81 BAbitmap(0-3) 0 0 0 0
+ba_state 3 ba_wsize 32 tx_in_transit 3 tid 0 rem_window 32
+start_seq 0x922 max_seq 0x924 tx_exp_seq 0x922 bar_ackpending_seq 0x8d2
+bar_ackpending 0 free_me 0 alive 0 retry_bar 0
+retry_head 0 retry_tail 0 retry_cnt 0
+ackpending:
+  0000: 00 00 00 00 00 00 00 00 
+barpending:
+  0000: 00 00 00 00 00 00 00 00 
+txretry:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+retry_seq:
+  0000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0016: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0032: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0048: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0064: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0096: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+  0112: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 

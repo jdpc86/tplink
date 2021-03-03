@@ -1,0 +1,34 @@
+Reading Partition Table from NVRAM ... OK
+Parsing Partition Table ... OK
+partition 01: name = factory-boot    , base = 0x00000000, size = 0x00040000 Bytes, usedFlag = 1
+partition 02: name = fs-uboot        , base = 0x00040000, size = 0x00040000 Bytes, usedFlag = 1
+partition 03: name = os-image        , base = 0x00080000, size = 0x00200000 Bytes, usedFlag = 1
+partition 04: name = file-system     , base = 0x00280000, size = 0x00c80000 Bytes, usedFlag = 1
+partition 05: name = default-mac     , base = 0x00f00000, size = 0x00000200 Bytes, usedFlag = 1
+partition 06: name = pin             , base = 0x00f00200, size = 0x00000100 Bytes, usedFlag = 1
+partition 07: name = device-id       , base = 0x00f00300, size = 0x00000100 Bytes, usedFlag = 1
+partition 08: name = product-info    , base = 0x00f10000, size = 0x00006000 Bytes, usedFlag = 1
+partition 09: name = soft-version    , base = 0x00f16000, size = 0x00001000 Bytes, usedFlag = 1
+partition 10: name = extra-para      , base = 0x00f17000, size = 0x00001000 Bytes, usedFlag = 1
+partition 11: name = support-list    , base = 0x00f18000, size = 0x00008000 Bytes, usedFlag = 1
+partition 12: name = profile         , base = 0x00f20000, size = 0x00003000 Bytes, usedFlag = 1
+partition 13: name = default-config  , base = 0x00f23000, size = 0x0000d000 Bytes, usedFlag = 1
+partition 14: name = user-config     , base = 0x00f30000, size = 0x00040000 Bytes, usedFlag = 1
+partition 15: name = qos-db          , base = 0x00f70000, size = 0x00040000 Bytes, usedFlag = 1
+partition 16: name = partition-table , base = 0x00fb0000, size = 0x00010000 Bytes, usedFlag = 1
+partition 17: name = log             , base = 0x00fc0000, size = 0x00020000 Bytes, usedFlag = 1
+partition 18: name = radio_bk        , base = 0x00fe0000, size = 0x00010000 Bytes, usedFlag = 1
+partition 19: name = radio           , base = 0x00ff0000, size = 0x00010000 Bytes, usedFlag = 1
+partition 20: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 21: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 22: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 23: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 24: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 25: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 26: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 27: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 28: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 29: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 30: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 31: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
+partition 32: name =                 , base = 0x00000000, size = 0x00000000 Bytes, usedFlag = 0
