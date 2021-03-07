@@ -1,0 +1,1 @@
+root=/dev/mtdblock2 console=ttyS0,115200 init=/etc/preinit earlyprintk debug

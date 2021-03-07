@@ -1,5 +1,11 @@
 # Archer c8
 
+The unsupported v4 has 128 MiB flash but otherwise appears to have the same specifications.
+
+
+ssh -oKexAlgorithms=+diffie-hellman-group14-sha1 admin@192.168.0.1
+
+
 binwalk -W -I foo1.bin foo2.bin (bin diff, shows diff only)
 
 ![](./img/archerc8_bin_diff.png)

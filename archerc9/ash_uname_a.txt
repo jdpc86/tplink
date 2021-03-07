@@ -1,0 +1,1 @@
+Linux Akronite 2.6.36.4brcmarm #4 SMP PREEMPT Thu Mar 15 08:40:26 HKT 2018 armv7l GNU/Linux

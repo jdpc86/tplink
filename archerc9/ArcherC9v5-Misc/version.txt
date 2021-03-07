@@ -1,0 +1,1 @@
+Linux version 2.6.36.4brcmarm (raymond@Raymond) (gcc version 4.5.3 (Buildroot 2012.02) ) #1 SMP PREEMPT Wed Apr 3 12:28:09 CST 2019

@@ -407,7 +407,7 @@ void * generate_factory_image(const unsigned char *vendor, size_t vendor_len, co
 	if (!image)
 		error(1, errno, "malloc");
 
-	image[0] = *len >> 24;  //first 4, length of the firmware
+	image[0] = *len >> 24;  //first 4, length of the firmware, small endian, biggiest byte in last byte
 	image[1] = *len >> 16;
 	image[2] = *len >> 8;
 	image[3] = *len;

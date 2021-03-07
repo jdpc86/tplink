@@ -1,0 +1,20 @@
+00000000-07ffffff : System RAM
+  00040000-0041efff : Kernel text
+  00438000-0049eeab : Kernel data
+08000000-0fffffff : PCIe Outbound Window, Port 0
+  08000000-080fffff : PCI Bus 0001:01
+    08000000-08007fff : 0001:01:00.0
+18000300-18000307 : serial
+18000400-18000407 : serial
+1800c000-1800cfff : dmu_regs
+18012000-18012fff : pcie0
+18013000-18013fff : pcie1
+18014000-18014fff : pcie2
+18021000-18021fff : ehci_hcd
+18022000-18022fff : ohci_hcd
+18023000-18023fff : xhci_hcd
+19000000-19000fff : cru_regs
+40000000-47ffffff : PCIe Outbound Window, Port 1
+  40000000-400fffff : PCI Bus 0002:02
+    40000000-40007fff : 0002:02:00.0
+98000000-9fffffff : System RAM
