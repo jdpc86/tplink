@@ -150,6 +150,39 @@ static const struct flash_partition_entry cpe646_partitions[] = {
 };
 
 /**
+    The flash partition table for 0665
+
+    It is the same as the one used by the stock images,
+    with one exception: The soft-version partition between
+    the os-image and the support-list has been removed
+    to get the same flash content after flashing factory and
+    sysupgrade.
+*/
+static const struct flash_partition_entry cpe665_partitions[] = {
+	{"factory-boot", 0x00000, 0x40000},
+	{"fs-uboot", 0x40000, 0x40000},
+	{"os-image", 0x80000, 0x200000},
+	{"file-system", 0x280000, 0xc80000},
+	{"default-mac", 0xf00000, 0x000200},
+	{"pin", 0xf00200, 0x00100},
+	{"device-id", 0xf00300, 0x00100},
+	{"product-info", 0xf10000, 0x006000},
+	{"soft-version", 0xf16000, 0x01000},
+	{"extra-para", 0xf17000, 0x01000},
+	{"support-list", 0xf18000, 0x008000},
+	{"profile", 0xf20000, 0x03000},
+	{"default-config", 0xf23000, 0x0d000},
+	{"user-config", 0xf30000, 0x40000},
+	{"qos-db", 0xf70000, 0x40000},
+	{"partition-table", 0xfb0000, 0x010000},
+	{"certificate", 0xfc0000, 0x10000},
+	{"merge-config", 0xfd0000, 0x10000},
+	{"radio_bk", 0xfe0000, 0x10000},
+	{"radio", 0xff0000, 0x10000},
+	{NULL, 0, 0}
+};
+
+/**
    The support list for CPE210/220/510/520
 
    The stock images also contain strings for two more devices: BS510 and BS210.
@@ -169,6 +202,20 @@ static const unsigned char archerc9v2_support_list[] =
 	"{product_name:ArcherC9,"
 	"product_ver:2.0.0,"
 	"special_id:00000000}\n"
+	"\x00";
+
+static const unsigned char archerc9v5_support_list[] =
+	"\x00\x00\x00\x4b\x00\x00\x00\x00"
+	"SupportList:\n"
+	"{product_name:ArcherC9,"
+	"product_ver:5.0.0,"
+	"special_id:45550000}\n"
+	"{product_name:ArcherC9,"
+	"product_ver:5.0.0,"
+	"special_id:55530000}\n"
+	"{product_name:ArcherC9,"
+	"product_ver:5.0.0,"
+	"special_id:4A500000}\n"
 	"\x00";
 
 static const unsigned char archerc1900_support_list[] =
@@ -205,13 +252,49 @@ static const unsigned char archerc8v3_support_list[] =
 	"\x00";
 
 static const unsigned char softversion[] =
-	"soft_ver:1.1.2 Build 20180126 rel.58698\n"
-	"fw_id:4CC8BBF897C91ED05745C2A56463A481\x00";
+	"soft_ver:1.2.1 Build 20180328 rel.2212\n"
+	"fw_id:50C52674CA56262D44B4CA5492E88878\x00";
 
 static const unsigned char extra_para[] =
 	"\x00\x00\x00\x02\x00\x00\x00\x00\x01\x00\x00";
 
-
+static const unsigned char merge_config[] =
+"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+"<config>\n"
+"<dhcp>\n"
+"<dhcp name=\"lan\">\n"
+"<ignore>0</ignore>\n"
+"</dhcp>\n"
+"</dhcp>\n"
+"<network>\n"
+"<interface name=\"lan\">\n"
+"<gateway></gateway>\n"
+"<lan_type>dynamic</lan_type>\n"
+"</interface>\n"
+"</network>\n"
+"<switch>\n"
+"<switch_vlan name=\"ap_dev\">\n"
+"<ports>0 5</ports>\n"
+"<device>switch0</device>\n"
+"<vlan>2</vlan>\n"
+"</switch_vlan>\n"
+"</switch>\n"
+"<sysmode>\n"
+"<global name=\"sysmode\">\n"
+"<support>yes</support>\n"
+"<mode>router</mode>\n"
+"</global>\n"
+"<global name=\"router\">\n"
+"</global>\n"
+"<global name=\"ap\">\n"
+"</global>\n"
+"</sysmode>\n"
+"<domain_login>\n"
+"<default name=\"tp_domain\">\n"
+"<redirect>tplinklogin.net</redirect>\n"
+"</default>\n"
+"</domain_login>\n"
+"</config>\x00";
 
 /** Allocates a new image partition */
 struct image_partition_entry alloc_image_partition(const char *name, size_t len) {
@@ -270,6 +353,12 @@ struct image_partition_entry make_softversion(const unsigned char *support_list,
 struct image_partition_entry make_extra_para(const unsigned char *extra_para, size_t len) {
 	struct image_partition_entry entry = alloc_image_partition("extra-para", len);
 	memcpy(entry.data, extra_para, len);
+	return entry;
+}
+
+struct image_partition_entry make_merge_config(const unsigned char *merge_config, size_t len) {
+	struct image_partition_entry entry = alloc_image_partition("merge-config", len);
+	memcpy(entry.data, merge_config, len);
 	return entry;
 }
 
@@ -407,7 +496,7 @@ void * generate_factory_image(const unsigned char *vendor, size_t vendor_len, co
 	if (!image)
 		error(1, errno, "malloc");
 
-	image[0] = *len >> 24;  //first 4, length of the firmware, small endian, biggiest byte in last byte
+	image[0] = *len >> 24;  //first 4, length of the firmware
 	image[1] = *len >> 16;
 	image[2] = *len >> 8;
 	image[3] = *len;
@@ -484,6 +573,41 @@ static void do_cpe510(const char *support_list,int size,const char *cfe_name, co
 		image = generate_sysupgrade_image(cpe510_partitions, parts, &len);
 	else
 		image = generate_factory_image(cpe510_vendor, sizeof(cpe510_vendor)-1, parts, &len);
+
+	FILE *file = fopen(output, "wb");
+	if (!file)
+		error(1, errno, "unable to open output file");
+
+	if (fwrite(image, len, 1, file) != 1)
+		error(1, 0, "unable to write output file");
+
+	fclose(file);
+
+	free(image);
+
+	size_t i;
+	for (i = 0; parts[i].name; i++)
+		free_image_partition(parts[i]);
+}
+
+/** Generates an image for 665 and writes it to a file ONLY SUPPORT sysupgrade*/
+static void do_cpe665(const char *support_list,int size,const char *cfe_name, const char *output, const char *kernel_image, const char *rootfs_image, bool add_jffs2_eof, bool sysupgrade) {
+	struct image_partition_entry parts[7] = {};
+
+	
+	parts[0] = make_partition_table(cpe665_partitions); //we're skipping fs-uboot and softversion here so 4 parts in total
+	// parts[1] = read_file("fs-uboot", cfe_name, false);
+	parts[1] = read_file("os-image", kernel_image, false);
+	parts[2] = read_file("file-system", rootfs_image, add_jffs2_eof);
+	parts[3] = make_softversion(softversion, sizeof(softversion)-1);
+	parts[4] = make_merge_config(merge_config, sizeof(merge_config) - 1);
+	parts[5] = make_support_list(support_list, size - 1); // size is the size of different board passed in
+	size_t len;
+	void *image;
+	if (sysupgrade)
+		image = generate_sysupgrade_image(cpe665_partitions, parts, &len);
+	else
+		image = generate_factory_image(cpe646_vendor, sizeof(cpe646_vendor)-1, parts, &len);
 
 	FILE *file = fopen(output, "wb");
 	if (!file)
@@ -648,6 +772,8 @@ int main(int argc, char *argv[]) {
 		do_cpe510(archerc1900_support_list,sizeof(archerc1900_support_list), "archerc9v2_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC9v2") == 0)
 		do_cpe510(archerc9v2_support_list,sizeof(archerc9v2_support_list), "archerc9v2_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
+	else if (strcmp(board, "ARCHERC9v5") == 0)
+		do_cpe665(archerc9v5_support_list,sizeof(archerc9v5_support_list), "archerc9v2_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC8") == 0)
 		do_cpe510(archerc8_support_list,sizeof(archerc8_support_list), "archerc8_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC8v2") == 0)
