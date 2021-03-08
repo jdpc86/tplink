@@ -1,4 +1,4 @@
-OpenWRT BCM ...And the entire flash usage looks like this -
+# OpenWRT BCM ...And the entire flash usage looks like this -
 
 CFE	trx	gz'd lzma	lzma'd kernel	SquashFS	JFFS2 filesystem	NVRAM
 
@@ -6,7 +6,7 @@ CFE	trx	gz'd lzma	lzma'd kernel	SquashFS	JFFS2 filesystem	NVRAM
 16M  FFFFFF  (1000000)
 128M FFFFFFF (10000000)
 
-factory-to-ddwrt:
+# factory-to-ddwrt:
 
 ....fwup-ptn par
 tition-table bas
@@ -49,7 +49,36 @@ dd if=factory-to-ddwrt.bin skip=6164 count=2048 bs=1 of=partition-table.bin
 # extra-para for the double boot configuration (factory boot and uboot)
 
 
-tp-link fw:
+# tp-link fw:
+
+0x1014-0x18d4 (special new config)
+4116, 2240
+
+ dd if=archerc9v5.bin of=special_cfg.bin skip=4116 count=2240 bs=1
+
+
+
+....support-list
+................
+.......,........
+SupportList:.{pr
+oduct_name:Arche
+rC9,product_ver:
+5.0.0,special_id
+:45550000}.{prod
+uct_name:ArcherC
+9,product_ver:5.
+0.0,special_id:5
+5530000}.{produc
+t_name:ArcherC9,
+product_ver:5.0.
+0,special_id:4A5
+00000}soft-versi
+on..............
+.............l..
+.Nsoft_ver:1.2.1
+
+
 
 ...K.0.....board
 type=0x0665.boar
@@ -139,10 +168,19 @@ weid:mtd jd$ xxd  mtdblock5.bin | grep -v ffff
 00080030: ff04 0000 fd0c 0000 0600 0000 f055 8cb4  .............U..
 00080040: 4f69 1075 785e 9457 4b6f e336 10be fb57  Oi.ux^.WKo.6...W
 
+Linux Akronite 2.6.36.4brcmarm #4 SMP PREEMPT Thu Mar 15 08:40:26 HKT 2018 armv7l GNU/Linux
 
 ## dd-wrt archerc9 v5 thread
 
 https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=315680&postdays=0&postorder=asc&start=0
+
+Broadcom HW is outdated right now. Especially MIPS based devices.
+
+ARM broadcom will get more attention again once we receive new broadcom based units. But right now it is more fun to play with atheros, especially when you don't have to workaround the number of issues broadcoms nas has.
+
+status is that i found out how the fw format works, but its complicated since it forced me to use jffs2 filesystem since the cfe bootloader loads the kernel from jffs2 filesystem
+
+
 
 ## dd-wrt archerc9 v4 thread
 https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=305884&postdays=0&postorder=asc&start=135

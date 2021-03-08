@@ -1,0 +1,12 @@
+admin@Akronite:/$ nvrammanager -c /mnt/sda1/archerc9/ddwrt-jd.bin 
+file_len:12893833
+fw_type_name :  
+md5 verify ok!
+[NM_Error](nm_api_readPtnFromBuf) 00500: check: fwup-ptn os-image base 0x01000 size 0x199000	
+fwup-ptn file-system base 0x19a000 size 0xab0d9a	
+fwup-ptn extra-para base 0xc4ad9a size 0x0000b	
+fwup-ptn partition-table base 0x00800 size 0x00800	
+fwup-ptn support-list base 0xc4ada5 size 0x000d0	
+
+Segmentation fault
+

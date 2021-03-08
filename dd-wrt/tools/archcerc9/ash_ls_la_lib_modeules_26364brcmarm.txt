@@ -1,0 +1,7 @@
+drwxrwxr-x    3 root     root             0 Mar 16 02:50 .
+drwxrwxr-x    5 root     root             0 Mar 16 04:06 ..
+lrwxrwxrwx    1 root     root           111 Dec 14 22:22 build -> /data1/c9/boards/model_brcm_bcm470x/sdk/linux-2.6.36-router-6.37.14.93/components/opensource/linux/linux-2.6.36
+drwxrwxr-x    7 root     root             0 Mar 16 02:50 kernel
+-rw-rw-r--    1 root     root          4744 Mar 16 02:50 modules.builtin
+-rw-rw-r--    1 root     root          3046 Mar 16 02:50 modules.order
+lrwxrwxrwx    1 root     root           111 Mar 16 02:50 source -> /data1/c9/boards/model_brcm_bcm470x/sdk/linux-2.6.36-router-6.37.14.93/components/opensource/linux/linux-2.6.36
