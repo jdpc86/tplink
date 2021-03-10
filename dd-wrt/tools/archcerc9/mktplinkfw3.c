@@ -511,6 +511,50 @@ void * generate_factory_image(const unsigned char *vendor, size_t vendor_len, co
 	return image;
 }
 
+
+void put_partitions_plain(uint8_t *buffer, const struct image_partition_entry *parts) {
+	size_t i;
+	char *image_pt = (char *)buffer;
+	size_t bases[2];
+	size_t base = 0x0;
+	for (i = 0; parts[i].name; i++) {
+		memcpy(buffer + base, parts[i].data, parts[i].size);
+		bases[i]=base;
+		base += parts[i].size;
+	}
+
+
+	// *image_pt=0; 
+	// memset(image_pt+1, 0xff, end-image_pt-1);
+}
+
+void * generate_c9_jffs2_image(const unsigned char *vendor, size_t vendor_len, const struct image_partition_entry *parts, size_t *len) {
+	*len = 0x1014;
+
+	size_t i;
+	for (i = 0; parts[i].name; i++)
+		*len += parts[i].size;
+
+	uint8_t *image = malloc(*len);
+	if (!image)
+		error(1, errno, "malloc");
+
+	image[0] = *len >> 24;  //first 4, length of the firmware
+	image[1] = *len >> 16;
+	image[2] = *len >> 8;
+	image[3] = *len;
+
+	// memcpy(image+0x14, vendor, vendor_len);
+	// memset(image+0x14+vendor_len, 0xff, 4096);
+    memset(image+0x14, 0xff, 4096);
+
+	put_partitions_plain(image + 0x1014, parts);
+	put_md5(image+0x04, image+0x14, *len-0x14);
+
+	return image;
+}
+
+
 /**
    Generates the firmware image in sysupgrade format
 
@@ -608,6 +652,41 @@ static void do_cpe665(const char *support_list,int size,const char *cfe_name, co
 		image = generate_sysupgrade_image(cpe665_partitions, parts, &len);
 	else
 		image = generate_factory_image(cpe646_vendor, sizeof(cpe646_vendor)-1, parts, &len);
+
+	FILE *file = fopen(output, "wb");
+	if (!file)
+		error(1, errno, "unable to open output file");
+
+	if (fwrite(image, len, 1, file) != 1)
+		error(1, 0, "unable to write output file");
+
+	fclose(file);
+
+	free(image);
+
+	size_t i;
+	for (i = 0; parts[i].name; i++)
+		free_image_partition(parts[i]);
+}
+
+/** Generates an image for 665 according to c9v5 image, 1014 + special_config section followed by jffs2 that has bootloader, os and fs**/
+static void do_cpe665_jffs2(const char *support_list,int size,const char *cfe_name, const char *output, const char *kernel_image, const char *rootfs_image, bool add_jffs2_eof, bool sysupgrade) {
+	struct image_partition_entry parts[7] = {};
+
+	
+	// parts[0] = make_partition_table(cpe665_partitions); //we're skipping fs-uboot and softversion here so 4 parts in total
+	parts[0] = read_file("c9_config", cfe_name, false);
+	parts[1] = read_file("jffs2-image", kernel_image, false);
+	// parts[3] = read_file("file-system", rootfs_image, add_jffs2_eof);
+	// parts[4] = make_softversion(softversion, sizeof(softversion)-1);
+	// parts[5] = make_merge_config(merge_config, sizeof(merge_config) - 1);
+	// parts[5] = make_support_list(support_list, size - 1); // size is the size of different board passed in
+	size_t len;
+	void *image;
+	if (sysupgrade)
+		image = generate_sysupgrade_image(cpe665_partitions, parts, &len);
+	else
+		image = generate_c9_jffs2_image(cpe646_vendor, sizeof(cpe646_vendor)-1, parts, &len);
 
 	FILE *file = fopen(output, "wb");
 	if (!file)
@@ -774,6 +853,8 @@ int main(int argc, char *argv[]) {
 		do_cpe510(archerc9v2_support_list,sizeof(archerc9v2_support_list), "archerc9v2_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC9v5") == 0)
 		do_cpe665(archerc9v5_support_list,sizeof(archerc9v5_support_list), "archerc9v5_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
+	else if (strcmp(board, "ARCHERC9v5jffs2") == 0)
+		do_cpe665_jffs2(archerc9v5_support_list,sizeof(archerc9v5_support_list), "c9_config.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC8") == 0)
 		do_cpe510(archerc8_support_list,sizeof(archerc8_support_list), "archerc8_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC8v2") == 0)
