@@ -596,11 +596,11 @@ static void do_cpe665(const char *support_list,int size,const char *cfe_name, co
 
 	
 	parts[0] = make_partition_table(cpe665_partitions); //we're skipping fs-uboot and softversion here so 4 parts in total
-	// parts[1] = read_file("fs-uboot", cfe_name, false);
-	parts[1] = read_file("os-image", kernel_image, false);
-	parts[2] = read_file("file-system", rootfs_image, add_jffs2_eof);
-	parts[3] = make_softversion(softversion, sizeof(softversion)-1);
-	parts[4] = make_merge_config(merge_config, sizeof(merge_config) - 1);
+	parts[1] = read_file("fs-uboot", cfe_name, false);
+	parts[2] = read_file("os-image", kernel_image, false);
+	parts[3] = read_file("file-system", rootfs_image, add_jffs2_eof);
+	parts[4] = make_softversion(softversion, sizeof(softversion)-1);
+	// parts[5] = make_merge_config(merge_config, sizeof(merge_config) - 1);
 	parts[5] = make_support_list(support_list, size - 1); // size is the size of different board passed in
 	size_t len;
 	void *image;
@@ -773,7 +773,7 @@ int main(int argc, char *argv[]) {
 	else if (strcmp(board, "ARCHERC9v2") == 0)
 		do_cpe510(archerc9v2_support_list,sizeof(archerc9v2_support_list), "archerc9v2_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC9v5") == 0)
-		do_cpe665(archerc9v5_support_list,sizeof(archerc9v5_support_list), "archerc9v2_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
+		do_cpe665(archerc9v5_support_list,sizeof(archerc9v5_support_list), "archerc9v5_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC8") == 0)
 		do_cpe510(archerc8_support_list,sizeof(archerc8_support_list), "archerc8_cfe.bin", output, kernel_image, rootfs_image, add_jffs2_eof, sysupgrade);
 	else if (strcmp(board, "ARCHERC8v2") == 0)
