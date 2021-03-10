@@ -51,12 +51,18 @@ dd if=factory-to-ddwrt.bin skip=6164 count=2048 bs=1 of=partition-table.bin
 
 # tp-link fw:
 0x1014-0x14f6 (special new config)
+4116, 1250
 //0x1014-0x18d4 (special new config)
 0x14f7 - (starting of fs-uboot)
-4116, 2240
 
- dd if=archerc9v5.bin of=special_cfg.bin skip=4116 count=2240 bs=1
+ dd if=archerc9v5.bin of=special_cfg.bin skip=4116 count=1250 bs=1
 
+mkfs.jffs2 -d db -e 8192 -n -o db_image.jffs2 // eraseblocksize 0x2000, no-cleanmarker
+
+jffs2 headings?
+
+00000000: 8519 01e0 2e00 0000 d49e f84a 0100 0000  ...........J....
+00000010: 0000 0000 0200 0000 199a ec5f 0604 0000  ..........._....
 
 
 ....support-list
@@ -171,6 +177,15 @@ weid:mtd jd$ xxd  mtdblock5.bin | grep -v ffff
 
 Linux Akronite 2.6.36.4brcmarm #4 SMP PREEMPT Thu Mar 15 08:40:26 HKT 2018 armv7l GNU/Linux
 
+
+
+gcc -c -Wall -Werror -fpic md5.c
+gcc -shared -o libmd5.so md5.o
+gcc -L. mktplinkfw3.c -lmd5
+export LD_LIBRARY_PATH=/media/jd/data2/archerc9/dd-wrt/tools/archerc9/:$LD_LIBRARY_PATH
+./a.out -B ARCHERC9v5 -k os-images-hex.bin -r fs-images-hex.bin -o ddwrt-jd.bin
+
+
 ## dd-wrt archerc9 v5 thread
 
 https://forum.dd-wrt.com/phpBB2/viewtopic.php?t=315680&postdays=0&postorder=asc&start=0
@@ -258,3 +273,34 @@ make install
 make image
 
 Note: please build the GPL codes following the order(1-7), otherwise it has risk to compile error.
+
+
+
+
+admin@Akronite:/root$ nvrammanager -c /mnt/sda/archerc9/ddwrt-jd-c9-jffs2.bin 
+file_len:17176518
+fw_type_name :  
+md5 verify ok!
+[NM_Error](nm_api_readPtnFromBuf) 00500: check: support-list
+read from inner size is 267
+[Error]sysmgr_proinfo_buildStruct():  670 @ unknown id(device_name), skip it.
+[Error]sysmgr_proinfo_buildStruct():  670 @ unknown id(country), skip it.
+--------------------------------------------------------------------
+      vendorName : TP-LINK
+       vendorUrl : www.tp-link.com
+     productName : ArcherC9
+ productLanguage : EU
+       productId : 00090005
+      productVer : ff050000
+       specialId : 55530000
+            hwId : 4CB2296EC518CD78756068DF0C192057
+           oemId : CB307217DCE3307F614AA10CD7332342
+--------------------------------------------------------------------
+[Error]sysmgr_cfg_checkSupportList():  973 @ specialId 45550000 NOT Match.
+Firmwave supports, check OK.
+[NM_Error](nm_api_readPtnFromBuf) 00500: check: support-list
+[NM_Error](nm_api_readPtnFromBuf) 00500: check: soft-version
+[NM_Error](nm_api_readPtnFromBuf) 00500: check: support-list
+[NM_Error](nm_api_readPtnFromBuf) 00500: check: soft-version
+[NM_Error](nm_api_readPtnFromBuf) 00514: check: merge-config
+chekc firmware file success!
