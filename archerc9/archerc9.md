@@ -50,8 +50,9 @@ dd if=factory-to-ddwrt.bin skip=6164 count=2048 bs=1 of=partition-table.bin
 
 
 # tp-link fw:
-
-0x1014-0x18d4 (special new config)
+0x1014-0x14f6 (special new config)
+//0x1014-0x18d4 (special new config)
+0x14f7 - (starting of fs-uboot)
 4116, 2240
 
  dd if=archerc9v5.bin of=special_cfg.bin skip=4116 count=2240 bs=1
