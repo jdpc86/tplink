@@ -355,3 +355,38 @@ Firmwave supports, check OK.
 [NM_Error](nm_api_readPtnFromBuf) 00500: check: soft-version
 [NM_Error](nm_api_readPtnFromBuf) 00514: check: merge-config
 chekc firmware file success!
+
+
+usb is under /Volumes 
+
+//create a bootable usb image for dd-wrt?
+
+diskutil list //usb is /dev/disk2
+diskutil unmountDisk /dev/disk2
+
+ sudo dd if=~/Downloads/factory-to-ddwrt-c9v4.bin of=/dev/disk2 bs=512
+
+ sudo dd if=mtdblock3.bin of=/dev/disk2 bs=1 //2nd attempt to build a jffs2 bootable usb for archcerc9?
+
+steps to mount mtdblock3.bin to linux:
+
+sudo modprobe -r mtdram
+sudo modeprobe -r mtdblock // start off clean, remove mtdram, mtdblock module first
+
+sudo modprobe mtdram total_size=32768 erase_size=8 // create fake mtd device of total size 32M, eraseblock 8K --> 0x2000
+
+sudo modprobe mtdblock // this will create fake char device /dev/mtd0 and block device /dev/mtdblock0
+
+ls /dev/mtd*
+
+sudo dd if=/media/jd/data2/tplink/archerc9/mtd/mtdblock3.bin of=/dev/mtdblock0 bs=1 // populates the fake mtdblock0 device
+
+sudo mount -t jffs2 /dev/mtdblock0 ./mtd_c9/ // mount it
+
+sudo cp -r /mnt/mtd_c9 . // copied to /tplink/archerc9/mtd_c9
+
+
+
+
+
+
