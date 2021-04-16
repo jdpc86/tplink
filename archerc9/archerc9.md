@@ -233,8 +233,13 @@ Linux Akronite 2.6.36.4brcmarm #4 SMP PREEMPT Thu Mar 15 08:40:26 HKT 2018 armv7
 gcc -c -Wall -Werror -fpic md5.c
 gcc -shared -o libmd5.so md5.o
 gcc -L. mktplinkfw3.c -lmd5
-export LD_LIBRARY_PATH=/media/jd/data2/archerc9/dd-wrt/tools/archerc9/:$LD_LIBRARY_PATH
+<!-- export LD_LIBRARY_PATH=/media/jd/data2/archerc9/dd-wrt/tools/archerc9/:$LD_LIBRARY_PATH -->
+export LD_LIBRARY_PATH=/media/jd/data2/tplink/dd-wrt/tools/archcerc9:$LD_LIBRARY_PATH
+
 ./a.out -B ARCHERC9v5 -k os-images-hex.bin -r fs-images-hex.bin -o ddwrt-jd.bin
+
+
+gcc -L. md5_inputfile.c -lmd5 -o md5_inputfile.o
 
 
 ## dd-wrt archerc9 v5 thread
@@ -326,6 +331,8 @@ make image
 Note: please build the GPL codes following the order(1-7), otherwise it has risk to compile error.
 
 
+ssh -oKexAlgorithms=+diffie-hellman-group14-sha1 admin@192.168.0.1
+
 
 
 admin@Akronite:/root$ nvrammanager -c /mnt/sda/archerc9/ddwrt-jd-c9-jffs2.bin 
@@ -386,7 +393,40 @@ sudo mount -t jffs2 /dev/mtdblock0 ./mtd_c9/ // mount it
 sudo cp -r /mnt/mtd_c9 . // copied to /tplink/archerc9/mtd_c9
 
 
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo rm -rf ./bin
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo rm -rf ./etc
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo rm -rf ./lib
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo rm -rf ./sbin
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo rm -rf ./sys
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo rm -rf ./usr
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo rm -rf ./www
 
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/bin .
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/etc .
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/lib .
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/sbin .
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/sys .
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/usr .
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/www .
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/mmc .
+jd@jd-w540:/media/jd/data2/tplink/archerc9/mtd_c9$ sudo cp -r ../../../binwalk/_factory-to-ddwrt.bin.extracted/squashfs-root/jffs .
+
+<SysAccountLogin>on</SysAccountLogin> // this appears to have enabled additional security that ssh regular password stopped working!
+uses Linux system account to login
+
+otherwise, has -C that uses web account (admin) to login 
+
+insert 0x00:
+
+vi insert space (0x20)
+:% !xxd // switch to xxd mode
+replace 0x20 with 0x00
+:% !xxd -r // reverse back
+:wq // save
+
+dd if=archerc9v5.bin skip=4 count=16 of=c9v5.md5.bin bs=1
+
+openssl rsautl -sign -in c9v5.md5.bin -inkey ~/.ssh/id_rsa > signed.bin
 
 
 
